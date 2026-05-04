@@ -1,20 +1,19 @@
 # ==============================================================================
-# BOSE SOUNDTOUCH HYBRID 2026
+# BOSE SOUNDTOUCH HYBRID 2026 V3
 # ==============================================================================
-#
 # --- HOW TO UPDATE THIS APP ---
-# Due to how some NAS systems (like QNAP/Synology) aggressively cache images,
-# simply clicking "Recreate" while using the 'latest' tag often fails to pull
-# the newest code. Choose your update method below to bypass this issue:
+# Due to how some NAS systems (like my QNAP server) aggressively cache images,
+# simply clicking "Recreate" while using the 'latest' tag fails to pull the 
+# newest code. If you have this problem try a method below to bypass this issue:
 #
-# METHOD A: NAS / GUI USERS (The Version Tag Method)
-# 1. Check the GitHub Releases page for the newest version number (e.g., v4).
+# METHOD A: IF NEEDED FOR NAS/GUI USERS (Version Tag Method)
+# 1. Check the GitHub Releases page for the newest version number (e.g., :v4).
 # 2. Change the word 'latest' on the image line below to that exact tag (e.g., :v4).
 # 3. Click 'Recreate' or 'Update' in your Docker interface.
-# 4. Optional: Go to your Images tab and click 'Clean Up' to delete the old version.
+# 4. I'll also include a new YML for each release that will be correctly tagged.
 #
 # METHOD B: COMMAND LINE / LINUX USERS
-# Leave the tag as 'latest'. Navigate to the folder containing this file and run:
+# Set the tag as 'latest'. Navigate to the folder containing this file and run:
 # 1. docker compose pull
 # 2. docker compose up -d
 # 3. docker image prune -f
@@ -22,8 +21,9 @@
 
 services:
   bose-hybrid:
-    # Default is 'latest' for fresh installs. 
-    # Change to a specific version (e.g., :v4) to force an update on NAS systems.
+    # Default is normally 'latest' for fresh installs. However, to force
+    # an update on your NAS change it to the aspecific version (e.g., :v4)
+    # Current version tag below is correct for theis release: v3
     image: ghcr.io/tjgigs/bose-soundtouch-hybrid-2026:v3
     
     container_name: bose-soundtouch-hybrid
